@@ -9,5 +9,6 @@ WORKDIR lm-gvp-funsocs
 RUN apt-get update
 RUN apt-get install -y libsm6 libxext6 libxrender-dev
 RUN pip install torch==2.0.1
+RUN pip install torch-cluster==1.6.1
 RUN conda env create -n production --file environment.yml
 SHELL ["conda","run","-n","production","/bin/bash","-c"]
