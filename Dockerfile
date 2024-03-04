@@ -8,5 +8,6 @@ WORKDIR lm-gvp-funsocs
 #CMD echo "Hello world"
 RUN apt-get update
 RUN apt-get install -y libsm6 libxext6 libxrender-dev
+RUN pip install torch==2.0.1
 RUN conda env create -n production --file environment.yml
 SHELL ["conda","run","-n","production","/bin/bash","-c"]
